@@ -62,6 +62,40 @@
             --transition-fast: all 0.3s ease;
         }
 
+        /* ===== ANIMAZIONI AGGIORNATE ===== */
+        .menu-item {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: var(--transition-slow);
+        }
+
+        .menu-item.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-header {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: var(--transition-slow);
+        }
+
+        .section-header.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .map-container {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: var(--transition-slow);
+        }
+
+        .map-container.animate {
+            opacity: 1;
+            transform: scale(1);
+        }
+
         /* ===== RESET E BASI ===== */
         * {
             margin: 0;
@@ -126,28 +160,10 @@
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23D4AF37'%3E%3Cpath d='M0,0 C50,0 100,25 100,100 L80,100 C80,40 40,20 0,20 Z'/%3E%3Cpath d='M0,0 C30,0 70,15 70,70 L60,70 C60,25 25,10 0,10 Z'/%3E%3C/svg%3E");
         }
 
-        .corner-tl { 
-            top: 0;
-            left: 0;
-        }
-        
-        .corner-tr { 
-            transform: scaleX(-1); 
-            top: 0;
-            right: 0;
-        }
-        
-        .corner-bl { 
-            transform: scaleY(-1); 
-            bottom: 0;
-            left: 0;
-        }
-        
-        .corner-br { 
-            transform: scale(-1); 
-            bottom: 0;
-            right: 0;
-        }
+        .corner-tl { top: 0; left: 0; }
+        .corner-tr { transform: scaleX(-1); top: 0; right: 0; }
+        .corner-bl { transform: scaleY(-1); bottom: 0; left: 0; }
+        .corner-br { transform: scale(-1); bottom: 0; right: 0; }
 
         /* ===== TITOLI E HEADER ===== */
         .brand-header {
@@ -197,9 +213,6 @@
             text-align: center;
             margin: 5rem 0 3rem;
             position: relative;
-            opacity: 0;
-            transform: translateY(30px);
-            animation-duration: var(--animation-slow); /* Più lenta */
         }
 
         .section-title {
@@ -232,11 +245,6 @@
             border-radius: var(--radius-lg);
             box-shadow: 0 8px 25px var(--soft-shadow),
                       inset 0 0 15px var(--gold-light);
-            opacity: 0;
-            transform: translateY(30px);
-            transition: var(--transition-slow); /* Rallentata la transizione */
-            animation-duration: var(--animation-medium); /* Animazione più lenta */
-            will-change: transform, opacity;
         }
 
         .menu-item:hover {
@@ -295,7 +303,7 @@
         .contact-info {
             padding: var(--spacing-md);
         }
-
+        
         .contact-detail {
             display: flex;
             align-items: center;
@@ -335,11 +343,7 @@
         }
 
         .social-button {
-            background: linear-gradient(45deg, 
-                #833AB4 0%,
-                #E1306C 50%,
-                #FCAF45 100%
-            );
+            background: linear-gradient(45deg, #833AB4 0%, #E1306C 50%, #FCAF45 100%);
             color: var(--deep-purple);
         }
         
@@ -476,6 +480,11 @@
                 width: 100px;
                 height: 100px;
             }
+
+            .menu-grid {
+                gap: 1rem;
+                padding: 1rem;
+            }
         }
 
         @media (max-width: 576px) {
@@ -502,22 +511,13 @@
     </style>
 </head>
 
-
 <body>
     <main class="menu-hero">
-        <div class="fantasy-border">
-            <div class="border-corner corner-tl"></div>
-            <div class="border-corner corner-tr"></div>
-            <div class="border-corner corner-bl"></div>
-            <div class="border-corner corner-br"></div>
-        </div>
-
         <div class="brand-header">
             <h1 class="brand-logo">Dolci&Dolce</h1>
-            <p class="brand-tagline">Dal 1982, arte dolciaria tra tradizione e innovazione</p>
+            <p class="brand-tagline">Arte dolciaria tra tradizione e innovazione</p>
         </div>
-
-        <!-- Caffetteria Section -->
+       <!-- Caffetteria Section -->
         <section>
             <div class="section-header">
                 <h2 class="section-title">☕ Caffetteria</h2>
@@ -1352,118 +1352,128 @@
                 </article>
             </div>
         </section>
- <!-- Sezione Contatti -->
- <section class="contact-section">
-    <div class="section-header">
-        <h2 class="section-title">📌 Contatti</h2>
+        <section class="contact-section">
+            <h2 class="section-title">📌 Contatti</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3 class="section-title">La Nostra Dimora</h3>
+                    <div class="contact-detail">
+                        <p><i class="fas fa-map-marker-alt"></i> Piazza Giustolisi, 4<br>Mirabella Imbaccari, Sicilia</p>
+                    </div>
+                    <div class="contact-detail">
+                        <p><i class="fas fa-phone"></i> +39 0933738068</p>
+                    </div>
+                    <div class="contact-detail">
+                        <p><i class="fas fa-envelope"></i> dolcidolce29@gmail.com</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/_dolci_dolce_?igsh=d2l1djkwenR3cWlu" 
+                           class="social-button" 
+                           style="background: #E1306C;">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/share/1KR4r3bbKr/" 
+                           class="social-button" 
+                           style="background: #3b5998;">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://wa.me/390933738068" 
+                           class="social-button" 
+                           style="background: #25D366;">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.7631381002197!2d14.44461971225302!3d37.324437971985994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13111b0038798eb1%3A0x992e85729e180949!2s%22Dolci%26Dolce%22%20Pasticceria%20di%20Nino%20Bonura!5e0!3m2!1sro!2sit!4v1744921800948!5m2!1sro!2sit" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <footer class="site-footer">
+            <div class="footer-brand">Dolci&Dolce</div>
+            <p class="brand-tagline">| Artigiani del gusto |</p>
+            <nav class="footer-nav">
+                <a href="#privacy" class="footer-link">Privacy Policy</a>
+                <a href="#terms" class="footer-link">Termini di Servizio</a>
+                <a href="#cookie" class="footer-link">Cookie Policy</a>
+            </nav>
+            <p class="copyright">© 2025 Dolci&Dolce. Tutti i diritti riservati.</p>
+        </footer>
+    </main>
+
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
     </div>
-    <div class="contact-grid">
-        <div class="contact-info">
-            <h3 class="contact-heading">La Nostra Dimora</h3>
-            <div class="contact-detail">
-                <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-                <p>Piazza Giustolisi, 4<br>Mirabella Imbaccari, Sicilia</p>
-            </div>
-            <div class="contact-detail">
-                <div class="contact-icon"><i class="fas fa-phone"></i></div>
-                <p>+39 0933738068</p>
-            </div>
-            <div class="contact-detail">
-                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                <p>dolcidolce29@gmail.com</p>
-            </div>
-            <div class="social-links">
-                <a href="https://www.instagram.com/_dolci_dolce_?igsh=d2l1djkwenR3cWlu" class="social-button"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.facebook.com/share/1KR4r3bbKr/" class="social-button1"><i class="fab fa-facebook"></i></a>
-                <a href="https://wa.me/390933738068" class="whatsapp">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-            </div>
-        </div>
-        
-        <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.7631381002197!2d14.44461971225302!3d37.324437971985994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13111b0038798eb1%3A0x992e85729e180949!2s%22Dolci%26Dolce%22%20Pasticceria%20di%20Nino%20Bonura!5e0!3m2!1sro!2sit!4v1744921800948!5m2!1sro!2sit" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-    </div>
-</section>
 
-<!-- Footer -->
-<footer class="site-footer">
-    <div class="footer-brand">Dolci&Dolce</div>
-    <p class="brand-tagline">Artigiani del gusto dal 1982 | P.IVA 0123456789</p>
-    <nav class="footer-nav">
-        <a href="#privacy" class="footer-link">Privacy Policy</a>
-        <a href="#terms" class="footer-link">Termini di Servizio</a>
-        <a href="#cookie" class="footer-link">Cookie Policy</a>
-    </nav>
-    <p class="copyright">© 2023 Dolci&Dolce. Tutti i diritti riservati.</p>
-</footer>
-</main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Animazioni migliorate con Intersection Observer
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px'
+            };
 
-<div class="back-to-top" id="backToTop">
-<i class="fas fa-chevron-up"></i>
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // Animazioni modificate con tempi più lenti per le uscite
-        gsap.utils.toArray(".section-header").forEach(section => {
-            gsap.to(section, {
-                scrollTrigger: { 
-                    trigger: section, 
-                    start: "top 85%",
-                    end: "top 15%", 
-                    toggleActions: "play none none reverse" // Gestisce l'animazione in entrata e uscita
-                },
-                opacity: 1,
-                y: 0,
-                duration: 1.8, // Durata aumentata per animazione lenta
-                ease: "power2.out"
+            // Observer per i menu items
+            const itemObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.menu-item').forEach(item => {
+                itemObserver.observe(item);
+            });
+
+            // Observer per le sezioni
+            const sectionObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, {threshold: 0.2});
+
+            document.querySelectorAll('.section-header').forEach(section => {
+                sectionObserver.observe(section);
+            });
+
+            // Animazione mappa
+            const mapObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, {threshold: 0.3});
+
+            mapObserver.observe(document.querySelector('.map-container'));
+
+            // Back to top migliorato
+            const backToTop = document.getElementById('backToTop');
+            window.addEventListener('scroll', () => {
+                backToTop.style.opacity = window.scrollY > 500 ? 1 : 0;
+            });
+
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
             });
         });
-
-        gsap.utils.toArray(".menu-item").forEach((item, i) => {
-            gsap.to(item, {
-                scrollTrigger: { 
-                    trigger: item, 
-                    start: "top 90%",
-                    end: "top 10%", 
-                    toggleActions: "play none none reverse" // Gestisce l'animazione in entrata e uscita
-                },
-                opacity: 1,
-                y: 0,
-                duration: 1.4, // Durata aumentata per animazione più lenta
-                delay: i * 0.08, // Delay più consistente tra gli elementi
-                ease: "power3.out" // Easing modificato per una sensazione più morbida
-            });
-        });
-
-        // Bottone back-to-top con transizione più lenta
-        const backToTop = document.getElementById('backToTop');
-        window.addEventListener('scroll', () => {
-            backToTop.classList.toggle('visible', window.scrollY > 500);
-        });
-
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // Effetto parallasse migliorato e più fluido
-        gsap.utils.toArray('.menu-item').forEach((item, i) => {
-            gsap.to(item, {
-                scrollTrigger: {
-                    trigger: item,
-                    start: "top bottom",
-                    end: "bottom top",
-                    scrub: 1.5 // Valore aumentato per un effetto più lento e fluido
-                },
-                y: (i, target) => -ScrollTrigger.maxScroll(window) * 0.05 * (i % 2 ? -1 : 1),
-                ease: "none"
-            });
-        });
-    });
-</script>
-</main>
+    </script>
 </body>
 </html>
