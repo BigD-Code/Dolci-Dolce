@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>Dolci&Dolce - Menu Elegante</title>
+    <title>Dolci&Dolce-Menu</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:wght@400;600;700&family=Dancing+Script:wght@500;700&family=EB+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -282,6 +282,93 @@
             color: transparent;
             font-size: var(--text-md);
         }
+        .flavors-showcase {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 var(--spacing-md) var(--spacing-md);
+        text-align: center;
+    }
+    
+    .flavors-title {
+        font-family: 'EB Garamond', serif;
+        font-size: var(--text-md);
+        color: var(--deep-purple);
+        margin-bottom: var(--spacing-sm);
+        font-weight: 600;
+    }
+    
+    .flavors-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--spacing-sm);
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    .flavor-badge {
+        background: linear-gradient(45deg, rgba(255, 255, 255, 0.95), rgba(255, 248, 234, 0.95));
+        border: 1px solid var(--gold);
+        padding: var(--spacing-xs) var(--spacing-sm);
+        border-radius: var(--radius-md);
+        box-shadow: 0 4px 15px var(--soft-shadow),
+                  inset 0 0 8px var(--gold-light);
+        font-family: 'Cormorant Garamond', serif;
+        font-size: var(--text-sm);
+        color: var(--text-dark);
+        transition: var(--transition-fast);
+    }
+    
+    .flavor-badge:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px var(--soft-shadow),
+                  0 0 15px var(--gold-light);
+    }
+    
+    /* Animazione per i flavor-badge */
+    .flavor-badge {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: var(--transition-normal);
+    }
+    
+    .flavors-container.animate .flavor-badge {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    /* Stile per gli elementi speciali */
+    .featured-item {
+        position: relative;
+        background: linear-gradient(45deg, rgba(255, 255, 255, 0.98), rgba(255, 248, 234, 0.98));
+        box-shadow: 0 8px 25px var(--soft-shadow),
+                  inset 0 0 20px var(--gold-shimmer),
+                  0 0 15px var(--magic-glow);
+    }
+    
+    .featured-item::after {
+        content: '★';
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        width: 30px;
+        height: 30px;
+        background: var(--gold-gradient);
+        color: white;
+        border-radius: var(--radius-round);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: var(--text-sm);
+        box-shadow: 0 3px 10px var(--soft-shadow);
+    }
+    
+    .item-description {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: var(--text-sm);
+        color: var(--text-light);
+        margin-top: var(--spacing-xs);
+        font-style: italic;
+    }
 
         /* ===== SEZIONE CONTATTI ===== */
         .contact-section {
@@ -539,7 +626,22 @@
                         </div>
                     </div>
                 </article>
-                <!-- All coffee items -->
+                <article class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-title">Caffè Freddo</h3>
+                        <div class="price-container">
+                            <div class="dose-option"><span class="price">1,50€</span></div>
+                        </div>
+                    </div>
+                </article>
+                <article class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-title">Caffè Americano</h3>
+                        <div class="price-container">
+                            <div class="dose-option"><span class="price">1,50€</span></div>
+                        </div>
+                    </div>
+                </article>
                 <article class="menu-item">
                     <div class="item-header">
                         <h3 class="item-title">Caffè Macchiato</h3>
@@ -609,6 +711,79 @@
                         <h3 class="item-title">Thè Caldo</h3>
                         <div class="price-container">
                             <div class="dose-option"><span class="price">2,00€</span></div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Colazione Section -->
+        <section>
+            <div class="section-header">
+                <h2 class="section-title">🍩 Colazione</h2>
+            </div>
+            <div class="menu-grid">
+                <article class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-title">Cornetto Ripieno</h3>
+                        <div class="price-container">
+                            <div class="dose-option"><span class="price">1,30€</span></div>
+                        </div>
+                    </div>
+                </article>
+                <article class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-title">Cornetto Vuoto</h3>
+                        <div class="price-container">
+                            <div class="dose-option"><span class="price">1,00€</span></div>
+                        </div>
+                    </div>
+                </article>
+                <article class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-title">Cornetto Piccolo</h3>
+                        <div class="price-container">
+                            <div class="dose-option"><span class="price">1,00€</span></div>
+                        </div>
+                    </div>
+                </article>
+                <article class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-title">Raviolo Grande(Ricoltta)</h3>
+                        <div class="price-container">
+                            <div class="dose-option"><span class="price">1,30€</span></div>
+                        </div>
+                    </div>
+                </article>
+                <article class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-title">Colazione (Piccola)</h3>
+                        <div class="price-container">
+                            <div class="dose-option"><span class="price">1,00€</span></div>
+                        </div>
+                    </div>
+                </article>
+                <article class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-title">Colazione (Grande)</h3>
+                        <div class="price-container">
+                            <div class="dose-option"><span class="price">1,50€</span></div>
+                        </div>
+                    </div>
+                </article>
+                <article class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-title">Iris (Grande)</h3>
+                        <div class="price-container">
+                            <div class="dose-option"><span class="price">2,00€</span></div>
+                        </div>
+                    </div>
+                </article>
+                <article class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-title">Iris (Piccola)</h3>
+                        <div class="price-container">
+                            <div class="dose-option"><span class="price">1,30€</span></div>
                         </div>
                     </div>
                 </article>
@@ -738,6 +913,14 @@
                         <h3 class="item-title">Calice Bianco/Rosso</h3>
                         <div class="price-container">
                             <div class="dose-option"><span class="price">4,00€</span></div>
+                        </div>
+                    </div>
+                </article>
+                <article class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-title">Calice Prosecco</h3>
+                        <div class="price-container">
+                            <div class="dose-option"><span class="price">2,50€</span></div>
                         </div>
                     </div>
                 </article>
@@ -1133,30 +1316,6 @@
             <div class="menu-grid">
                 <article class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-title">Cornetto Vuoto</h3>
-                        <div class="price-container">
-                            <div class="dose-option"><span class="price">1,00€</span></div>
-                        </div>
-                    </div>
-                </article>
-                <article class="menu-item">
-                    <div class="item-header">
-                        <h3 class="item-title">Cornetto Ripieno</h3>
-                        <div class="price-container">
-                            <div class="dose-option"><span class="price">1,30€</span></div>
-                        </div>
-                    </div>
-                </article>
-                <article class="menu-item">
-                    <div class="item-header">
-                        <h3 class="item-title">Tutta la Colazione</h3>
-                        <div class="price-container">
-                            <div class="dose-option"><span class="price">1,30€</span></div>
-                        </div>
-                    </div>
-                </article>
-                <article class="menu-item">
-                    <div class="item-header">
                         <h3 class="item-title">Cannoli Grandi</h3>
                         <div class="price-container">
                             <div class="dose-option"><span class="price">2,00€</span></div>
@@ -1213,9 +1372,17 @@
                 </article>
                 <article class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-title">Pasta di Mandorla al kg</h3>
+                        <h3 class="item-title">Pasta di Mandorla(kg)</h3>
                         <div class="price-container">
                             <div class="dose-option"><span class="price">24,00€</span></div>
+                        </div>
+                    </div>
+                </article>
+                <article class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-title">Pasta di Mandorla al Pistacchio(kg)</h3>
+                        <div class="price-container">
+                            <div class="dose-option"><span class="price">26,00€</span></div>
                         </div>
                     </div>
                 </article>
@@ -1224,6 +1391,14 @@
                         <h3 class="item-title">Pasta di Mandorla al pezzo</h3>
                         <div class="price-container">
                             <div class="dose-option"><span class="price">1,00€</span></div>
+                        </div>
+                    </div>
+                </article>
+                <article class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-title">Semifreddo(kg)</h3>
+                        <div class="price-container">
+                            <div class="dose-option"><span class="price">22,00€</span></div>
                         </div>
                     </div>
                 </article>
@@ -1239,6 +1414,22 @@
                 <article class="menu-item">
                     <div class="item-header">
                         <h3 class="item-title">Cioccolato</h3>
+                        <div class="price-container">
+                            <div class="dose-option"><span class="price">3,50€</span></div>
+                        </div>
+                    </div>
+                </article>
+                <article class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-title">Cioccolato Dubai</h3>
+                        <div class="price-container">
+                            <div class="dose-option"><span class="price">4,00€</span></div>
+                        </div>
+                    </div>
+                </article>
+                <article class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-title">Njadujia</h3>
                         <div class="price-container">
                             <div class="dose-option"><span class="price">3,50€</span></div>
                         </div>
@@ -1262,6 +1453,14 @@
                 </article>
                 <article class="menu-item">
                     <div class="item-header">
+                        <h3 class="item-title">Stracciatella</h3>
+                        <div class="price-container">
+                            <div class="dose-option"><span class="price">3,50€</span></div>
+                        </div>
+                    </div>
+                </article>
+                <article class="menu-item">
+                    <div class="item-header">
                         <h3 class="item-title">Kinder Bueno</h3>
                         <div class="price-container">
                             <div class="dose-option"><span class="price">4,00€</span></div>
@@ -1270,7 +1469,15 @@
                 </article>
                 <article class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-title">Mandorla Tostata</h3>
+                        <h3 class="item-title">Pistacchio</h3>
+                        <div class="price-container">
+                            <div class="dose-option"><span class="price">4,00€</span></div>
+                        </div>
+                    </div>
+                </article>
+                <article class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-title">Limone</h3>
                         <div class="price-container">
                             <div class="dose-option"><span class="price">3,50€</span></div>
                         </div>
@@ -1278,9 +1485,25 @@
                 </article>
                 <article class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-title">Pistacchio</h3>
+                        <h3 class="item-title">Nocciola</h3>
                         <div class="price-container">
-                            <div class="dose-option"><span class="price">4,00€</span></div>
+                            <div class="dose-option"><span class="price">3,50€</span></div>
+                        </div>
+                    </div>
+                </article>
+                <article class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-title">Fior di Latte</h3>
+                        <div class="price-container">
+                            <div class="dose-option"><span class="price">3,50€</span></div>
+                        </div>
+                    </div>
+                </article>
+                <article class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-title">Fragola</h3>
+                        <div class="price-container">
+                            <div class="dose-option"><span class="price">3,50€</span></div>
                         </div>
                     </div>
                 </article>
@@ -1321,7 +1544,7 @@
                     <div class="item-header">
                         <h3 class="item-title">Kinder</h3>
                         <div class="price-container">
-                            <div class="dose-option"><span class="price">4,50€</span></div>
+                            <div class="dose-option"><span class="price">4,00€</span></div>
                         </div>
                     </div>
                 </article>
@@ -1329,7 +1552,7 @@
                     <div class="item-header">
                         <h3 class="item-title">Pistacchio</h3>
                         <div class="price-container">
-                            <div class="dose-option"><span class="price">4,50€</span></div>
+                            <div class="dose-option"><span class="price">4,00€</span></div>
                         </div>
                     </div>
                 </article>
@@ -1338,28 +1561,89 @@
 
         <!-- Gelateria Section -->
         <section>
-            <div class="section-header">
-                <h2 class="section-title">🍨 Gelateria</h2>
+    <div class="section-header">
+        <h2 class="section-title">🍨 Gelateria</h2>
+    </div>
+    
+    <div class="flavors-showcase">
+        <h3 class="flavors-title">I Nostri Gusti</h3>
+        <div class="flavors-container">
+            <div class="flavor-badge">Cioccolato</div>
+            <div class="flavor-badge">Stracciatella</div>
+            <div class="flavor-badge">Pistacchio</div>
+            <div class="flavor-badge">Fragola</div>
+            <div class="flavor-badge">Nocciola</div>
+            <div class="flavor-badge">Limone</div>
+            <div class="flavor-badge">Cioccolato Dubai</div>
+            <div class="flavor-badge">Fior di latte</div>
+            <div class="flavor-badge">Njadujia</div>
+            <div class="flavor-badge">Vaniglia</div>
+            <div class="flavor-badge">Zuppa Inglese</div>
+            <div class="flavor-badge">Kinder Bueno</div>
+        </div>
+    </div>
+    
+    <div class="menu-grid">
+        <article class="menu-item">
+            <div class="item-header">
+                <h3 class="item-title">Coppetta Media</h3>
+                <div class="price-container">
+                    <div class="dose-option"><span class="price">2,50€</span></div>
+                </div>
             </div>
-            <div class="menu-grid">
-                <article class="menu-item">
-                    <div class="item-header">
-                        <h3 class="item-title">Coppetta Media</h3>
-                        <div class="price-container">
-                            <div class="dose-option"><span class="price">2,50€</span></div>
-                        </div>
-                    </div>
-                </article>
-                <article class="menu-item">
-                    <div class="item-header">
-                        <h3 class="item-title">Coppetta Grande</h3>
-                        <div class="price-container">
-                            <div class="dose-option"><span class="price">3,00€</span></div>
-                        </div>
-                    </div>
-                </article>
+        </article>
+        
+        <article class="menu-item">
+            <div class="item-header">
+                <h3 class="item-title">Coppetta Grande</h3>
+                <div class="price-container">
+                    <div class="dose-option"><span class="price">3,00€</span></div>
+                </div>
             </div>
-        </section>
+        </article>
+        
+        <article class="menu-item featured-item">
+            <div class="item-header">
+                <h3 class="item-title">Cono Gelato</h3>
+                <div class="price-container">
+                    <div class="dose-option"><span class="label">1 Gusto</span> <span class="price">2,00€</span></div>
+                    <div class="dose-option"><span class="label">2 Gusti</span> <span class="price">2,50€</span></div>
+                    <div class="dose-option"><span class="label">3 Gusti</span> <span class="price">3,00€</span></div>
+                </div>
+            </div>
+        </article>
+        
+        <article class="menu-item">
+            <div class="item-header">
+                <h3 class="item-title">Granita</h3>
+                <div class="price-container">
+                    <div class="dose-option"><span class="price">2,50€</span></div>
+                </div>
+            </div>
+        </article>
+        
+        <article class="menu-item">
+            <div class="item-header">
+                <h3 class="item-title">Brioche</h3>
+                <div class="price-container">
+                    <div class="dose-option"><span class="price">1,50€</span></div>
+                </div>
+            </div>
+        </article>
+        
+        <article class="menu-item">
+            <div class="item-header">
+                <h3 class="item-title">Brioche Ripiena</h3>
+                <div class="price-container">
+                    <div class="dose-option"><span class="price">3,80€</span></div>
+                </div>
+            </div>
+            <div class="item-description">
+                Con gelato a scelta
+            </div>
+        </article>
+    </div>
+</section>
  <!-- Sezione Contatti -->
  <section class="contact-section">
     <div class="section-header">
@@ -1398,7 +1682,7 @@
 <!-- Footer -->
 <footer class="site-footer">
     <div class="footer-brand">Dolci&Dolce</div>
-    <p class="brand-tagline">| Artigiani del gusto |</p>
+    <p class="brand-tagline">Artigiani del gusto</p>
     <nav class="footer-nav">
         <a href="#privacy" class="footer-link">Privacy Policy</a>
         <a href="#terms" class="footer-link">Termini di Servizio</a>
@@ -1470,6 +1754,25 @@
                 behavior: 'smooth'
             });
         });
+    // Animazione per i flavor-badge con delay a scalare
+        const flavorsContainer = document.querySelector('.flavors-container');
+        const flavorObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                    
+                    // Aggiungi delay progressivo ai singoli badge
+                    const badges = entry.target.querySelectorAll('.flavor-badge');
+                    badges.forEach((badge, index) => {
+                        badge.style.transitionDelay = `${index * 0.1}s`;
+                    });
+                }
+            });
+        }, {threshold: 0.1});
+        
+        if(flavorsContainer) {
+            flavorObserver.observe(flavorsContainer);
+        }
     });
 </script>
 </body>
